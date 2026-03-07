@@ -1,0 +1,103 @@
+{
+  "vertical": "P&C insurance agencies (independent)",
+  "icp": {
+    "revenue_range": "$5M\u2013$50M annual revenue",
+    "firm_archetypes": [
+      "Independent retail agencies with PL + small/mid CL mix",
+      "Regional/multi-location agencies with centralized service/accounting",
+      "Growth-oriented shops using Epic or AMS360, IVANS download, PL rater, small CL single-entry platforms"
+    ],
+    "buyer_roles": [
+      "Owner/Principal",
+      "COO/Operations Director",
+      "Commercial Lines Service/Placement Manager",
+      "Controller/Accounting Manager",
+      "AMS Administrator/IT"
+    ],
+    "operating_characteristics": [
+      "AMS = Applied Epic or Vertafore AMS360 with IVANS eDocs/Messages and Policy/Claims download",
+      "Heavy Outlook/Teams + PDF workflows; documents are often unstructured",
+      "Direct-bill heavy with monthly/weekly statement imports and producer comp calcs",
+      "Personal Lines comparative rater; small CL single-entry (Tarmika/Semsee) with frequent portal finalization",
+      "Seasonal renewal surges; constrained change bandwidth; prefer layer-on tools via APIs and email add-ins"
+    ]
+  },
+  "top_ai_use_cases": [
+    {
+      "rank": 1,
+      "name": "AI-driven IVANS eDocs/Download exception triage and auto-filing",
+      "problem_solved": "Daily IVANS download exceptions and unmatched eDocs/messages create manual triage, attachment, routing, and data hygiene work. Missed cancellations/endorsements cause rush work and E&O exposure.",
+      "current_process": "eDocs/Downloads land in AMS suspense. Staff scan PDF titles, open documents, search for named insured/policy/effective dates, and manually match to accounts/policies; forward or attach to activities; escalate cancels. Backlogs form during renewal spikes; exceptions linger.",
+      "workflow_insertion_point": "Post-bind service and document intake: IVANS eDocs/Messages and Policy Download into AMS suspense; Outlook for carrier emails outside download.",
+      "buyer": "Operations Director or Commercial Lines Service Manager; AMS Admin as implementation owner",
+      "roi_logic": "Primary ranking drivers: pain severity=5 (E&O and service credits), frequency=5 (daily, high volume), economic impact=4 (1\u20133 FTE hours/day reclaimed in mid-size books + avoidance of late-cancel rushes), ease of adoption=4 (layer onto IVANS/AMS via APIs; no workflow replacement), buyer clarity=5 (Service Ops owns the queue). Baseline math: Example mid-size agency processes ~200\u2013600 eDocs/day; 8\u201315% hit suspense or need human review. At 4 minutes per exception and 24\u201390 exceptions/day, that\u2019s ~1.6\u20136.0 staff-hours/day (32\u2013120 hrs/month). AI classification/extraction + fuzzy entity resolution can auto-file 60\u201380% of exceptions and prefill routing/context on the rest, cutting handling minutes by ~70%. That yields 22\u201384 hours/month regained per team, plus faster time-to-first-touch on cancellations (reducing rush rework and E&O tail risk).",
+      "proof_metric": "- % of eDocs auto-matched/auto-filed (target 65\u201380%)\n- Average handling time per suspense item (target -70%)\n- Suspense backlog age (items >24h) (target -60%)\n- Time-to-first-touch for cancellation eDocs (target <4 business hours)\n- Misfile rate from QA sampling (target <1%)",
+      "why_existing_software_does_not_fully_solve_it": "AMS suspense logic relies on exact field matches and carrier consistency; PDFs lack structured data; carrier participation and formats vary. Deterministic rules break on name variants, policy renumbering, and mid-term changes. Existing systems don\u2019t apply NLP for document understanding or fuzzy entity resolution across account/policy history with confidence-scored routing decisions; staff still read, interpret, and file PDFs manually."
+    },
+    {
+      "rank": 2,
+      "name": "Direct-bill commission statement (DBCS) AI reconciliation and revenue assurance",
+      "problem_solved": "Carrier direct-bill statements and commission downloads mismatch with AMS, requiring line-by-line tie-outs and corrections. Delays impair cash flow/DSO and create producer-comp disputes and rework.",
+      "current_process": "Accounting imports carrier downloads/CSVs/PDFs when available; otherwise keys from statements. Staff normalize carrier formats, map producer/carrier codes, compare to expected commissions, research missing lines, post JE corrections, and finalize producer comp. Cycle time stretches over days; recurring mapping errors reappear.",
+      "workflow_insertion_point": "Month-end/weekly accounting close: import of commission statements/downloads, reconciliation to AMS, JE posting, and producer compensation.",
+      "buyer": "Controller or CFO; Accounting Manager as pilot owner",
+      "roi_logic": "Primary ranking drivers: pain severity=5 (revenue leakage risk, comp disputes), frequency=4 (weekly/monthly across many carriers), economic impact=5 (hours saved + underposted commissions recovered + faster close), ease of adoption=4 (reads PDFs/CSVs and posts suggested matches; no AMS replacement), buyer clarity=5 (Accounting budget line). Baseline math: A $5M\u2013$50M agency often reconciles 1,500\u20133,000 statement rows/month across 15\u201340 carriers, consuming ~30\u201360 accounting hours/month. 0.2\u20130.5% of rows need investigation or are underposted/misapplied. AI parses unstructured statements, normalizes formats, resolves entities (carrier/producer/policy) with fuzzy matching, surfaces anomalies, and generates proposed entries. Expected result: 50\u201370% reduction in reconciliation hours (15\u201342 hrs/month) and 0.2\u20130.5% revenue recovery on direct-bill commissions (inferred; validate in pilot). Earlier posting shortens close by 3\u20135 days on the direct-bill portion, improving cash predictability and reducing comp disputes.",
+      "proof_metric": "- Reconciliation hours per close cycle (target -50% to -70%)\n- % of rows auto-matched without human intervention (target 70%+)\n- Count/value of corrections and recovered items (target 0.2\u20130.5% of statement value; validate)\n- Close cycle time from statement receipt to finalized comp (target -3 to -5 days)\n- Reoccurrence rate of mapping errors month-over-month (target -80%)",
+      "why_existing_software_does_not_fully_solve_it": "AMS imports are brittle across carrier-specific statement layouts and code schemes; when formats differ or partial downloads arrive, staff resort to Excel and manual matching. Existing tools lack robust NLP extraction for PDFs, cross-source entity resolution, anomaly detection, and prioritized exception queues with learning from prior resolutions."
+    },
+    {
+      "rank": 3,
+      "name": "COI issuance automation with wording compliance and endorsement verification",
+      "problem_solved": "High-volume COI requests require manual review of contract-specific wording and verification that requested endorsements/limits exist. Staff spend minutes per COI and risk E&O if wording implies coverage not afforded.",
+      "current_process": "Requests arrive via email/portal. Staff open policy docs/endorsement schedules, compare requested holder/wording/AI/WOS/additional insured requirements, check limits/dates, issue ACORD 25, and draft responses when endorsements are required. Back-and-forth with clients and carriers is common; corrections occur post-issuance.",
+      "workflow_insertion_point": "Post-bind service: COI request queue in Outlook/AMS; policy document repository and endorsement schedules; ACORD issuance in AMS or forms tool.",
+      "buyer": "Commercial Lines Service Manager; E&O/Operations shares risk mandate",
+      "roi_logic": "Primary ranking drivers: pain severity=5 (E&O exposure, client SLAs), frequency=5 (daily; spikes by trade/GC-heavy books), economic impact=4 (hours/day saved + avoided corrections), ease of adoption=4 (email/AMS add-in; uses existing ACORD workflows), buyer clarity=4 (Service lead owns). Baseline math: 30\u2013100 COIs/day at ~5\u201310 minutes each = 2.5\u201316.5 staff-hours/day. AI extracts requested wording/requirements from emails/attachments, compares to policy and endorsements (PDF/dec/page snippets), classifies requests as issuable vs. requires-endorsement, drafts compliant remarks/denials, and pre-fills ACORD fields. Expected result: 40\u201360% reduction in handling time (1\u201310 hours/day depending on volume), 30\u201350% fewer post-issuance corrections, and faster turnaround improving client satisfaction and reducing escalations.",
+      "proof_metric": "- Average handling time per COI (target -40% to -60%)\n- % of COI requests auto-cleared as compliant vs. flagged (target 50%+ auto-clear on eligible books)\n- Post-issuance correction rate (target -30% to -50%)\n- Time-to-first-response on non-compliant requests with drafted explanation (target <4 business hours)\n- QA-verified misstatement rate (target <0.5%)",
+      "why_existing_software_does_not_fully_solve_it": "AMS/forms tools can issue ACORDs, but they do not read contracts or policy PDFs, reconcile wording to endorsements, or generate reasoned compliance decisions. Without NLP to interpret clauses and compare to endorsement schedules, staff must manually check coverage and craft communications; template rules alone are insufficient for nuanced wording."
+    }
+  ],
+  "confidence_notes": {
+    "high_confidence": [
+      "Daily IVANS eDocs/Download exceptions and unmatched messages create manual triage and filing work in AMS suspense.",
+      "Missed/late handling of cancellation/endorsement eDocs leads to rush rework and E&O exposure.",
+      "In Epic/AMS360, deterministic matching frequently fails on name/policy/date discrepancies, pushing items to suspense.",
+      "eDocs are commonly delivered as PDFs requiring human review; limited structured data available for routing.",
+      "Direct-bill commission statement reconciliation is a weekly/monthly accounting burden with line-by-line tie-outs and corrections.",
+      "Mapping errors and partial downloads cause revenue to be understated until corrected; producer comp depends on accurate reconciliation.",
+      "Loss run requests/tracking delay submission readiness even when carriers must respond in ~10 business days; staff must still chase and manage status.",
+      "Re-keying across ACORD forms, PL raters, and small CL portals adds 30\u201390+ minutes per account; missing details surface late and cause rework.",
+      "COI issuance is high-volume in CL; nonstandard holder/wording requests require endorsement verification and generate back-and-forth.",
+      "FNOL intake and claim status tracking are manual in many accounts due to uneven claims download.",
+      "Market appetite identification and submission routing require manual validation; out-of-appetite submissions waste cycles.",
+      "Seasonal renewal surges create service bottlenecks and overtime.",
+      "Sales CRM and AMS have weak bi-directional sync; duplicate entry persists; producers capture unstructured notes.",
+      "PL comparative raters and small CL single-entry tools often require portal finalization and supplemental questions.",
+      "Ask Kodiak/IVANS Markets appetite metadata is not always current/granular; E&S markets underrepresented.",
+      "Agencies prefer layer-on tools that integrate with AMS/IVANS/Outlook rather than core replacement.",
+      "Email/PDF remains the dominant substrate for service workflows in the ICP.",
+      "These three selected use cases keep current systems and insert AI at high-friction document and reconciliation points with clear owners and KPIs.",
+      "Alternatives considered but deprioritized: (a) Loss run request/track: value gated by carrier response SLAs and smaller daily volume vs. eDocs/COIs; (b) PL/small CL rekey elimination: requires deep, variable carrier integrations already targeted by raters; higher delivery risk; (c) FNOL triage/status: service-positive but lower economic leverage at agency scale; (d) Appetite matching: helpful but impact depends on carrier data freshness and local relationships."
+    ],
+    "inferred_but_not_confirmed": [
+      "Typical mid-size agencies see ~200\u2013600 eDocs/day with 8\u201315% requiring human intervention; validate per pilot.",
+      "Average handling time per eDoc exception ~4 minutes including open, read, search, and file steps; validate.",
+      "DBCS volume ~1,500\u20133,000 rows/month across 15\u201340 carriers; 30\u201360 accounting hours/month; validate.",
+      "Revenue recovery from underposted/misapplied items ~0.2\u20130.5% of direct-bill commissions; validate books and carriers.",
+      "Close acceleration by 3\u20135 days on direct-bill portion when auto-matching reduces exception queues; validate with controller.",
+      "COI volumes of 30\u2013100/day in construction/transport-heavy books; average handling time 5\u201310 minutes per COI; validate.",
+      "AI auto-file rate of 60\u201380% on eDoc exceptions with <1% misfile rate is achievable with NLP + fuzzy matching; validate carriers and naming conventions.",
+      "COI auto-clear rate of 50%+ on eligible books if policy/endorsement repositories are accessible for NLP comparison; validate data access."
+    ],
+    "needs_interviews": [
+      "Quantify each pilot agency\u2019s actual suspense rate, carriers causing most exceptions, and average handling time per item.",
+      "Confirm accounting\u2019s current reconciliation hours, mismatch categories, and direct-bill commission volume to size recovery potential.",
+      "Validate COI request distribution by client/industry and baseline correction rates to set realistic automation thresholds.",
+      "Assess accessibility/location of policy documents/endorsement schedules (AMS attachments, shared drives) and permissioning for NLP processing.",
+      "Review AMS and IVANS API availability/limits and security for auto-filing and JE proposal posting.",
+      "Align buyer budget ownership: Service Ops for eDocs/COI; Accounting for DBCS; confirm approval chain and procurement timelines.",
+      "Define QA sampling plans and acceptable misfile/misstatement thresholds with E&O lead before pilot go-live.",
+      "Agree on pilot cohorts: carriers (for eDocs/DBCS) and client segments (for COIs) that represent >=60% of volume for measurable impact."
+    ]
+  }
+}

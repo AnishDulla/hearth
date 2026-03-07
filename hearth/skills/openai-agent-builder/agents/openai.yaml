@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenAI Agent Builder"
+  short_description: "Build production-ready OpenAI agents"
+  default_prompt: "Use $openai-agent-builder to design and scaffold an OpenAI agent for my task."

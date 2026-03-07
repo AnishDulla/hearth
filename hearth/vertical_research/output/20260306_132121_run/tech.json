@@ -1,0 +1,250 @@
+{
+  "vertical": "Plaintiff-side Personal Injury (PI) Law Firms",
+  "icp": {
+    "revenue_range": "$10M-$250M annual revenue",
+    "firm_archetypes": [
+      "High-volume PI litigation shops (motor vehicle, premises, general liability) with centralized intake and pre-lit teams",
+      "Regional multi-office PI firms with heavy advertising and 24/7 intake coverage",
+      "PI firms with dedicated pre-litigation, records, and lien-resolution units integrated with case management"
+    ],
+    "buyer_roles": [
+      "Managing Partner",
+      "Chief Operating Officer/Director of Operations",
+      "Director of Intake",
+      "Pre-Litigation Manager",
+      "Finance Director/Controller",
+      "IT/Systems Manager"
+    ],
+    "operating_characteristics": [
+      "Contingency-fee model with revenue realization only at settlement/disbursement",
+      "Lead-driven volume funnel with 24/7 coverage (often via legal intake BPO/answering services)",
+      "Case management software specialized for PI (e.g., Filevine, SmartAdvocate, CasePeer, Litify, Neos)",
+      "Dedicated records retrieval and lien resolution workflows; heavy reliance on medical records and bills",
+      "Trust/IOLTA accounting and strict compliance (monthly three-way reconciliation; disburse on collected funds only)"
+    ]
+  },
+  "technology_map": [
+    {
+      "category": "CRM/Intake & Lead Management",
+      "likely_vendors": [
+        "Lead Docket (Filevine)",
+        "Captorra",
+        "Law Ruler",
+        "Lawmatics",
+        "CASEpeer Leads (native)"
+      ],
+      "job_to_be_done": "Capture all inbound leads from phone/web/chat, standardize triage questionnaires, score/route leads, automate follow-ups, and hand off retained matters to the CMS with minimal rekeying.",
+      "where_it_breaks": "- Duplicate and fragmented intake records when BPOs and website/chat tools post into CRM and CMS separately, causing manual dedup/merge in the CMS.\n- Edge-case triage still requires attorney review; inconsistent criteria lead to premature declines or bad sign-ups.\n- Source attribution gaps: ad/call data (e.g., CallRail) rarely maps 1:1 to signed matters without custom connectors; \u201ccost per signed\u201d often requires exports.\n- Conflicts checks may not trigger until matter creation in CMS; late conflicts force unwind/rework.",
+      "human_workarounds": [
+        "Intake leads are manually reviewed and merged by Intake Leads before pushing to CMS.",
+        "Attorneys on-call review borderline screens over phone/text to approve/decline.",
+        "Weekly spreadsheet reconciliation of ad platforms, CallRail, and CRM reports to calculate CPL/CPA.",
+        "Manual run of conflicts in CMS immediately after retainer e-sign and reversal if necessary."
+      ]
+    },
+    {
+      "category": "Answering Services & After-Hours Intake",
+      "likely_vendors": [
+        "Alert Communications (24/7 intake/e-sign handoff)",
+        "Smith.ai (virtual reception + intake)",
+        "Ngage/Client Chat Live (chat)"
+      ],
+      "job_to_be_done": "Provide 24/7 human coverage for calls/chats/texts, perform scripted PI screening, and advance qualified leads to retainer via e-sign, with posts into CRM/CMS.",
+      "where_it_breaks": "- Data is often pushed via email or CSV/API into CRM/CMS with mismatched field maps; missing custom fields force staff to retype or correct.\n- Retainer e-sign via third-party requires TCPA consent and SMS enablement; if not enabled, email-only delivery slows speed-to-sign.\n- Intake notes and call recordings live in vendor portals; not all sync to CMS, creating audit gaps.",
+      "human_workarounds": [
+        "Operations sets up custom API/webhook field maps and maintains a \u201cmissing fields\u201d queue in CRM for staff to clean.",
+        "If SMS e-sign isn\u2019t enabled, staff text the signer a portal link from an integrated texting tool and confirm by phone.",
+        "Intake Managers spot-check recorded calls weekly for QA and paste summaries into the CMS timeline."
+      ]
+    },
+    {
+      "category": "Telephony & Call Tracking",
+      "likely_vendors": [
+        "CallRail (call tracking/attribution)",
+        "RingCentral (VoIP/UCaaS)",
+        "CallTrackingMetrics"
+      ],
+      "job_to_be_done": "Track marketing-driven calls to campaigns, record/score intake calls, route and text-enable main lines, and log communications to matters.",
+      "where_it_breaks": "- Linking a phone call to the correct lead/matter in CRM/CMS is not automatic without deep integrations; calls are frequently \u201cunassigned.\u201d\n- Conversation intelligence/recordings live in call platforms; only links or partial metadata make it into the CMS.\n- Number portability/text-enablement mismatches lead to staff using personal phones, losing audit trails.",
+      "human_workarounds": [
+        "Intake staff manually attach call records to leads/cases daily from a \u201cunassigned calls\u201d report.",
+        "Supervisors review recordings in CallRail to coach intake and document outcomes back in CMS notes.",
+        "Firms standardize on a text-enabled main line (e.g., Kenect + CMS) and disable personal texting in policy."
+      ]
+    },
+    {
+      "category": "Texting & Client Communication",
+      "likely_vendors": [
+        "Kenect (business texting integrated to Filevine/CASEpeer)",
+        "Case Status/Hona (client updates portal)",
+        "Neos built-in texting"
+      ],
+      "job_to_be_done": "Accelerate client responses for intake, facts collection, and updates; keep SMS threads in the matter record for compliance and continuity.",
+      "where_it_breaks": "- If texting is not integrated to the CMS, messages remain on personal devices or in siloed tools; critical context is lost.\n- Duplicated contacts across intake and CMS create separate SMS threads that don\u2019t merge when a matter is opened.\n- Media (photos, bills) sent by clients via SMS/MMS require manual download, renaming, and filing to the correct folder/field.",
+      "human_workarounds": [
+        "Mandate integrated texting and auto-post of full threads to the CMS timeline; audit monthly.",
+        "Ops runs a weekly dedupe job on contacts and merges threads; staff relabels \u201cprimary contact number.\u201d",
+        "Intake aides save client-submitted media to a standardized naming scheme and attach to structured fields (injury, PD, med bills)."
+      ]
+    },
+    {
+      "category": "E-signature for Retainers, Authorizations, and Liens",
+      "likely_vendors": [
+        "Vinesign (Filevine)",
+        "DocuSign",
+        "Dropbox Sign (integrated with CASEpeer)"
+      ],
+      "job_to_be_done": "Obtain signed retainers, HIPAA authorizations, and lien acknowledgments quickly via SMS/email, with signed PDFs filed back to the case.",
+      "where_it_breaks": "- SMS delivery for e-sign requires specific add-ons/config in DocuSign; without it, email-only flows delay signings and increase no-shows.\n- Signer identity (DOB/SSN) collection and retainer counter-sign handoffs can split across tools; final executed docs not always auto-filed to correct matter tab.\n- Template/version drift across intake/CMS causes stale forms or missing merge fields.",
+      "human_workarounds": [
+        "If SMS e-sign isn\u2019t enabled, staff calls/texts immediately after sending email links; repeats every few hours for high-value cases.",
+        "Firms create a \u201csigned docs\u201d queue watched by intake to ensure filing into CMS with correct document type and tags.",
+        "Ops owns a quarterly \u201ctemplate hygiene\u201d review to retire old form versions and rebind merge fields."
+      ]
+    },
+    {
+      "category": "Case Management Platforms (PI-focused)",
+      "likely_vendors": [
+        "Filevine (+ Lead Docket, Vinesign)",
+        "SmartAdvocate",
+        "CASEpeer",
+        "Neos (Assembly)",
+        "Litify (Salesforce-based)",
+        "CloudLex"
+      ],
+      "job_to_be_done": "Run end-to-end PI workflows: intake handoff, tasking/SLAs, medical/billing tracking, demand/settlement, litigation calendaring, and disbursement prep with reporting.",
+      "where_it_breaks": "- Each CMS integrates differently; costs, trust/disbursement, calendar rules, texting, and records often require separate add-ons or external partners.\n- Moving data between intake and case (custom fields, providers, insurance) still drops values; staff retypes.\n- Reporting/BI beyond built-in dashboards often requires exports, data syncs (e.g., S3), or IT-built connectors; definitions vary by system.",
+      "human_workarounds": [
+        "Pre-lit teams use CMS-specific checklists and required fields to force completeness before litigation opens.",
+        "Data specialists run nightly exception reports for null/invalid fields and assign clean-up tasks.",
+        "Ops exports to Excel or uses S3/ETL to Power BI/Tableau; a data dictionary is maintained internally to standardize KPIs."
+      ]
+    },
+    {
+      "category": "Medical Records and Bills Retrieval",
+      "likely_vendors": [
+        "Lexitas (records retrieval)",
+        "Compex Legal Services",
+        "ChartRequest",
+        "ChartSquad (patient-mediated)",
+        "Legal Monkeys",
+        "Records On Time",
+        "National Record Retrieval",
+        "MoveDocs (direct delivery into CMS)",
+        "YoCierge",
+        "Arctrieval"
+      ],
+      "job_to_be_done": "Request, track, and collect medical records and itemized bills from providers; file them into the case and update med/bill ledgers for demand and negotiation.",
+      "where_it_breaks": "- Provider-side friction: varied ROI portals, fax-only offices, prepayment checks, and identity verification stall requests regardless of software.\n- Provider naming/duplicate provider entries in CMS cause requests to go to wrong locations; staff must remap providers and resend.\n- Bills and records arrive in bulk PDFs; splitting by date-of-service, deduping, and coding charges is labor-intensive.\n- Retrieval vendor portals don\u2019t always sync granular status or fees to CMS; finance can\u2019t see accruals until invoices arrive.",
+      "human_workarounds": [
+        "Records clerks maintain a provider master with correct ROI addresses/faxes and alias mappings; they correct CMS provider lists quarterly.",
+        "Use vendor integrations that push documents directly to the matter; clerks still split/rename and index PDFs by DOS/treatment.",
+        "Billers key totals into structured fields and maintain a separate bill ledger spreadsheet to reconcile to demand packages.",
+        "Weekly \u201cstuck request\u201d queues prompt phone calls to providers; teams mail paper checks to unlock releases when required."
+      ]
+    },
+    {
+      "category": "Lien Resolution & Settlement Support",
+      "likely_vendors": [
+        "Synergy Settlement Services (lien resolution)",
+        "Compass LLC",
+        "Paramount Settlement Advisors",
+        "Massive",
+        "Milestone (client portal; settlement support)"
+      ],
+      "job_to_be_done": "Identify and resolve Medicare/Medicaid/ERISA/provider liens; track reductions; prepare net-to-client disbursement figures tied to trust accounting.",
+      "where_it_breaks": "- External lien vendors operate in separate portals; statuses and reduction letters need manual upload and double entry of lien balances.\n- Medicare/ERISA timelines don\u2019t match case settlement pace; settlement holds waiting on final demand or waiver letters.\n- Pro-rata and iterative negotiations require frequent recalculation; CMS worksheets help but don\u2019t eliminate manual math.",
+      "human_workarounds": [
+        "Paralegals maintain a lien tracker spreadsheet mirrored in CMS lien fields; attach all correspondence and final lien letters.",
+        "Escalate aged liens in weekly standups; attorneys place \u201cset-aside\u201d reserves to allow partial disbursements pending final figures.",
+        "Use CMS settlement worksheets to iterate scenarios; finance validates final numbers before initiating trust disbursements."
+      ]
+    },
+    {
+      "category": "Document Assembly & Demand Generation",
+      "likely_vendors": [
+        "Filevine Doc Assembly (.vine) + Demands AI",
+        "Clio Draft (Lawyaw)",
+        "EvenUp (AI demand drafting)",
+        "Dropbox Sign/DocuSign templates (for basic merges)"
+      ],
+      "job_to_be_done": "Generate PI documents (retainers, HIPAA auths, provider letters) and assemble demand packages pulling facts, treatment summaries, and bill totals from the CMS.",
+      "where_it_breaks": "- Merge fields break when custom fields change between intake and case layouts; templates silently fail or produce partial fills.\n- Demand drafting still hinges on accurate medical chronology and billed/paid amounts; if those aren\u2019t structured, AI or templates produce weak outputs.\n- Large exhibits (photos, imaging) exceed email size limits; packaging/sending requires portals or link sharing outside CMS.",
+      "human_workarounds": [
+        "Ops maintains a central template library with version control and quarterly test merges; broken fields are ticketed to Systems.",
+        "Medical chronology is prepared by staff or vendors before demand drafting; AI tools are used with human review for accuracy.",
+        "Firms use secure links or client portals to deliver demand packages; a \u201csent\u201d note with recipients and method is logged in CMS."
+      ]
+    },
+    {
+      "category": "Calendaring & Court Rules",
+      "likely_vendors": [
+        "CalendarRules (CASEpeer)",
+        "LawToolBox (Neos)",
+        "Outlook/Google/Microsoft 365 (synced)"
+      ],
+      "job_to_be_done": "Apply rules-based deadlines and sync events across staff calendars; keep litigation teams on track across jurisdictions.",
+      "where_it_breaks": "- Rules engines are add-ons; if not configured for the venue, paralegals still calculate dates manually.\n- Two-way calendar sync can duplicate or drop events when staff edit outside CMS; auditing who changed what is difficult.\n- Service/date-of-filing inputs must be precise; bad inputs cascade to wrong deadlines.",
+      "human_workarounds": [
+        "Lit teams keep a manual \u201ccritical dates\u201d checklist and spot-check calculated dates against local rules.",
+        "Limit external edits; designate a calendar owner per case to approve changes.",
+        "Use docketing audits before hearings/filings; print calendar reports for weekly review."
+      ]
+    },
+    {
+      "category": "Analytics & Reporting",
+      "likely_vendors": [
+        "Filevine Insights/Business Analytics",
+        "SmartAdvocate dashboards + scheduled reports",
+        "CASEpeer Advanced (S3 data sync)",
+        "CallRail analytics (marketing)"
+      ],
+      "job_to_be_done": "Monitor intake conversion, case velocity, demand/settlement cycle times, attorney/paralegal workloads, and marketing ROI; support staffing and budget decisions.",
+      "where_it_breaks": "- Cross-platform KPIs (marketing \u2192 intake \u2192 signed \u2192 settled net fees) require stitching CRM/CMS/call-tracking/finance\u2014usually not natively unified.\n- Built-in reports vary by vendor and change with upgrades; definitions drift across departments.\n- Advanced BI needs exports or S3 sync; IT maintains ETL and copes with schema changes.",
+      "human_workarounds": [
+        "Ops exports standardized CSVs weekly from CRM/CMS and CallRail; finance appends net fees; combined in Excel/Power BI for exec dashboards.",
+        "Create a firm-level KPI dictionary (date definitions, status buckets) and train teams quarterly.",
+        "Schedule CMS reports to email team leads; use exception reports to drive daily standups."
+      ]
+    },
+    {
+      "category": "Accounting, Trust/IOLTA, and Disbursements",
+      "likely_vendors": [
+        "QuickBooks Online/Desktop (integrated with CASEpeer, SmartAdvocate, Neos)",
+        "LawPay (payments)",
+        "TrustBooks (IOLTA reconciliation)"
+      ],
+      "job_to_be_done": "Track case costs, push reimbursables to accounting, manage trust/IOLTA, and generate disbursement checks and settlement statements accurately and compliantly.",
+      "where_it_breaks": "- CMS\u2192QuickBooks mappings can be partial (costs/vendors one-way); trust accounting still relies on legal-specific tools/policies.\n- Three-way trust reconciliations and lien payoffs require final, accurate numbers; last-minute reductions force redo of checks and statements.\n- Disbursement batches need synced vendor payee details; mismatches reject in QBO and require manual fixes.",
+      "human_workarounds": [
+        "Finance runs a pre-disbursement checklist: confirm liens, fees, costs, client share; compares CMS worksheet to QBO balances.",
+        "Use TrustBooks or manual three-way reconciliation monthly; controllers review exception reports.",
+        "If QBO sync fails, staff re-enters costs/vendors and reissues checks; maintain a \u201crejected items\u201d queue for resolution."
+      ]
+    }
+  ],
+  "confidence_notes": {
+    "high_confidence": [
+      "PI-focused CMS platforms (Filevine, SmartAdvocate, CASEpeer, Neos, Litify) are prevalent and advertise PI-specific features and integrations (medical records, QuickBooks, e-sign, texting).",
+      "Kenect integrates with Filevine/CASEpeer to sync contacts and post full SMS threads, addressing the fragmented texting problem.",
+      "Case intake CRMs used by PI firms include Lead Docket, Captorra, and Law Ruler; BPOs like Alert and Smith.ai push data into these systems and can drive e-sign retainer workflows.",
+      "Medical record retrieval commonly relies on external vendors (Lexitas, Compex, ChartRequest, ChartSquad, Legal Monkeys, Records On Time, MoveDocs, YoCierge, Arctrieval) with multiple CMS integrations available.",
+      "CasePeer and SmartAdvocate provide settlement/demand/lien tracking features; QuickBooks integrations exist for cost sync and check printing; LawPay and TrustBooks are used for payments and trust reconciliation.",
+      "Rules-based calendaring integrates via CalendarRules (CASEpeer) and LawToolBox (Neos), but must be configured per jurisdiction.",
+      "DocuSign SMS delivery is an add-on; firms without it rely on email links, impacting speed-to-sign."
+    ],
+    "inferred_but_not_confirmed": [
+      "Many firms still reconcile marketing spend to signed/settled cases in Excel/Power BI due to cross-platform data silos, even when CRM/CMS provide reporting.",
+      "Provider aliasing and address mismatches in CMS master data likely cause a meaningful share of failed/returned medical record requests.",
+      "Template/merge-field drift between intake and case layouts likely causes silent merge failures until staff discover bad output.",
+      "For trust/IOLTA, firms under $50M likely lean on QuickBooks + TrustBooks rather than full general ledger systems (e.g., Intacct)."
+    ],
+    "needs_interviews": [
+      "Quantify how often PI firms achieve end-to-end attribution from ad to settled fee without manual spreadsheets.",
+      "Measure actual adoption rates of e-sign via SMS vs. email-only in this ICP and the corresponding impact on time-to-retainer.",
+      "Assess which records vendors deliver the most complete status/billing sync into each CMS (depth varies by integration partner).",
+      "Validate the proportion of lien resolution handled in-house vs. outsourced by firm size and case mix.",
+      "Confirm the extent to which firms standardize on one texting platform across intake, pre-lit, and litigation vs. mixed tooling by team."
+    ]
+  }
+}

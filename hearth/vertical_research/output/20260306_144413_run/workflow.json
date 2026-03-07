@@ -1,0 +1,373 @@
+{
+  "vertical": "real estate brokerages",
+  "icp": {
+    "revenue_range": "$5M-$50M annual revenue",
+    "firm_archetypes": [
+      "Regional franchise or multi-office independent brokerage using MLS-integrated systems (e.g., ShowingTime) and transaction management (Dotloop, SkySlope, Lone Wolf Transactions)",
+      "Independent boutique brokerage with 50\u2013200 1099 agents and centralized TC/compliance desk",
+      "Team-centric brokerage structure with in-house transaction coordinators and shared CRM/lead routing (e.g., Follow Up Boss)"
+    ],
+    "buyer_roles": [
+      "Broker/Owner or Designated/Managing Broker (supervision, compliance, commissions)",
+      "Director of Operations or Office Manager (workflow, checklists, staffing)",
+      "Compliance Manager or Transaction Coordinator Lead (file review, audit readiness)",
+      "Finance/Controller (CDA preparation, agent billing, QBO integration, 1099s)",
+      "Marketing/Lead Manager or ISA Lead (lead sources, routing, speed-to-lead)",
+      "Listing Coordinator (MLS input, showing configuration)"
+    ],
+    "operating_characteristics": [
+      "MLS-centric operations; showing scheduling directly in the MLS via ShowingTime integrations",
+      "Front office CRM with automated lead routing rules; portal leads (Zillow Premier Agent, Realtor.com) flowing to CRM for distribution",
+      "Transaction management platform centralizes documents, forms/e-sign, templates, and review; back office connects to accounting for commissions and agent billing",
+      "Commission Disbursement Authorization (CDA) used to instruct title/escrow on payouts; ACH or checks to agents",
+      "If brokerage holds earnest money, maintains a regulated trust account with required reconciliations (state-specific; e.g., CA DRE guide)"
+    ]
+  },
+  "workflow_map": [
+    {
+      "stage": "Lead sourcing and intake",
+      "owner_roles": [
+        "Marketing/Lead Manager",
+        "ISA Lead",
+        "Team Leads"
+      ],
+      "current_process": "Leads originate from portals (Zillow Premier Agent live/tour/nurtured connections), Realtor.com feeds, IDX websites, PPC/social, referrals. Portal \u2018connections\u2019 are live-transferred or delivered to CRM; non-portal web leads arrive via forms/APIs.",
+      "common_tools": [
+        "Zillow Premier Agent (live phone/tour/nurtured connections)",
+        "Realtor.com integrations to CRM",
+        "Follow Up Boss (lead hub)",
+        "IDX website/landing pages (kvCORE/others, varies)"
+      ],
+      "manual_steps": [
+        "Configure sources and map fields/tags in CRM",
+        "Monitor duplicate or misrouted leads and manually reassign",
+        "Create/adapt action plans for new source types"
+      ],
+      "pain_points": [
+        "Live-call connections require immediate pickup; missed calls lower conversion",
+        "Different sources send different data (tags, MLS number), causing inconsistent routing",
+        "Separate systems (site forms, portals, spreadsheets) cause data gaps when not centralized"
+      ],
+      "why_painful": "CRMs must parse metadata (tags/MLS/zip) to distribute correctly; portal connections can be phone-first. When sources are not normalized, ops must manually fix routing and backfill fields.",
+      "business_impact": "Slower speed-to-lead and misrouted inquiries reduce agent acceptance/connection rates and ROI on paid lead sources. Centralization reduces export/import of PDFs and data gaps."
+    },
+    {
+      "stage": "Lead routing and first response",
+      "owner_roles": [
+        "ISA/Lead Manager",
+        "Team Leads",
+        "Assigned Agent"
+      ],
+      "current_process": "CRM applies advanced rules (tags, price, zip, city/state, MLS number) to assign to an agent/group; default rules apply if conditions not met. Action plans (texts/emails/tasks) kick off.",
+      "common_tools": [
+        "Follow Up Boss Lead Flow (advanced rules, action plans)"
+      ],
+      "manual_steps": [
+        "Tune routing logic and exceptions (e.g., lender pairing, ponds)",
+        "Manual reassignment on agent availability or coverage gaps"
+      ],
+      "pain_points": [
+        "Edge cases (missing tags/MLS or unrecognized source formats) bypass rules",
+        "Manual escalation needed for specializations (luxury, geo-farm) not perfectly tagged"
+      ],
+      "why_painful": "Rules are processed top-to-bottom; if source data is inconsistent, human intervention fixes defaulted or misrouted leads.",
+      "business_impact": "Queue delays and rework lower contact rates; missed SLA on live connections can forfeit the My Agent relationship with buyers."
+    },
+    {
+      "stage": "Listing appointment prep (CMA and presentation)",
+      "owner_roles": [
+        "Listing Agent",
+        "Listing Coordinator"
+      ],
+      "current_process": "Agent prepares CMA and listing presentation using MLS data and brokerage-branded templates; optional automated CMAs to nurture prospects.",
+      "common_tools": [
+        "Cloud CMA (MLS-fed CMA, branded presentations, admin tools for brokerage consistency)"
+      ],
+      "manual_steps": [
+        "Review comps for outliers; customize narrative and adjustments",
+        "Assemble property-specific materials (floor plans, upgrades)"
+      ],
+      "pain_points": [
+        "MLS data needs curation; not all comps are relevant without manual review",
+        "Ensuring brand consistency across agents without admin tooling"
+      ],
+      "why_painful": "Automated CMAs still require human judgment to avoid mispricing from non-comparable sales.",
+      "business_impact": "Poorly curated CMA risks over/underpricing, longer DOM, and lower net proceeds; admin tools reduce brand inconsistency and prep time."
+    },
+    {
+      "stage": "Seller listing paperwork and compliance setup",
+      "owner_roles": [
+        "Listing Agent",
+        "Transaction Coordinator (listing side)",
+        "Managing Broker/Compliance"
+      ],
+      "current_process": "Create a transaction; pull association/MLS forms; collect disclosures; send for e-signature; set up checklists and review workflow; enable mobile submission/review.",
+      "common_tools": [
+        "Dotloop or Lone Wolf Transactions (forms libraries, templates, mobile review, 75+ integrations incl. accounting/1099s)",
+        "DocuSign Rooms for Real Estate (centralized forms, e-sign, compliance)"
+      ],
+      "manual_steps": [
+        "Assemble the correct packet for property type and local rules",
+        "Validate form completeness; chase missing initials/signatures"
+      ],
+      "pain_points": [
+        "Different transaction types require different packets; agents occasionally use wrong templates",
+        "Returned-for-correction loops when signatures/fields missing"
+      ],
+      "why_painful": "Even with templates, exceptions and local addenda require human selection/validation; coordinators request changes and re-send documents.",
+      "business_impact": "Rework creates days of delay and audit risk; mobile compliance review shortens review loops but still needs human oversight."
+    },
+    {
+      "stage": "MLS listing input and showing configuration",
+      "owner_roles": [
+        "Listing Coordinator",
+        "Listing Agent"
+      ],
+      "current_process": "Enter listing in MLS Add/Edit; complete required fields; upload photos and PDFs; configure showing instructions with MLS-integrated showing tool.",
+      "common_tools": [
+        "MLS Add/Edit (e.g., Bright MLS required fields, documents upload)",
+        "ShowingTime for the MLS (Matrix-integrated \u201cSchedule a Showing\u201d button, ShowingCart, feedback follow-ups)"
+      ],
+      "manual_steps": [
+        "Data entry for listing fields; photo/document upload and labeling",
+        "Set showing rules, blackout times, and notification preferences"
+      ],
+      "pain_points": [
+        "Manual data entry errors trigger MLS compliance edits and re-entry",
+        "Inconsistent document naming/versions complicate later compliance checks"
+      ],
+      "why_painful": "Required-field validation in MLS forces completeness but not accuracy; miskeys and wrong media require correction.",
+      "business_impact": "Delayed go-live or MLS fines; downstream errors propagate to portals; more coordinator time per listing."
+    },
+    {
+      "stage": "Marketing and showings",
+      "owner_roles": [
+        "Listing Agent",
+        "Marketing Assistant"
+      ],
+      "current_process": "Syndication via MLS; schedule and manage tours; solicit and track showing feedback; adjust pricing/remarks with seller.",
+      "common_tools": [
+        "ShowingTime for the MLS (mobile app, simultaneous scheduling, auto feedback requests with up to 10 follow-ups)"
+      ],
+      "manual_steps": [
+        "Interpret feedback and advise price/condition changes",
+        "Coordinate open houses and private showing windows"
+      ],
+      "pain_points": [
+        "Multiple channels for feedback (calls/texts/emails) outside the showing platform cause fragmentation",
+        "Seller expectations management requires manual synthesis of feedback"
+      ],
+      "why_painful": "Not all buyers\u2019 agents use the integrated feedback path; ops compile fragments for a coherent seller update.",
+      "business_impact": "Longer time-to-price-reduction decisions; increased agent/admin time to consolidate feedback."
+    },
+    {
+      "stage": "Offer intake and management",
+      "owner_roles": [
+        "Listing Agent",
+        "TC (listing)",
+        "Managing Broker (as needed)"
+      ],
+      "current_process": "Offers arrive via email/text or an offer management tool; listing agent tracks, acknowledges, compares terms side-by-side, and communicates updates to buyer agents.",
+      "common_tools": [
+        "ShowingTime Offer Manager (central intake, side-by-side comparisons, mass status updates, audit trail)"
+      ],
+      "manual_steps": [
+        "If using email-only, manually log offers, check attachments, normalize terms",
+        "Clarify contingencies/escrow timelines with cooperating agents"
+      ],
+      "pain_points": [
+        "Email/text-based offers get lost in noisy inboxes; risk of missed offers",
+        "Manual comparison across many offers is time-consuming and error-prone"
+      ],
+      "why_painful": "Without a central intake, agents juggle fragmented communications; even with a tool, unusual terms/addenda still need manual review.",
+      "business_impact": "Risk of overlooking offers or miscommunicating status; slower cycle to offer selection and countering in competitive situations."
+    },
+    {
+      "stage": "Offer acceptance and open escrow",
+      "owner_roles": [
+        "Buyer/Listing Agent",
+        "TC (both sides)",
+        "Title/Escrow Officer"
+      ],
+      "current_process": "Execute contracts via e-sign; open title/escrow; deposit earnest money with title/escrow or broker trust account; change MLS status to under contract; initiate checklists and notifications.",
+      "common_tools": [
+        "Dotloop or DocuSign Rooms (execution, activity logs, submission/review)",
+        "Transaction checklists (Paperless Pipeline or platform-native)"
+      ],
+      "manual_steps": [
+        "Verify all parties\u2019 signatures/initials and correct dates/legal names",
+        "Coordinate earnest money deposit and confirm receipt"
+      ],
+      "pain_points": [
+        "Missing initials/date mismatches trigger re-execution cycles",
+        "Unclear earnest money holder/instructions causes confusion"
+      ],
+      "why_painful": "E-sign reduces friction but not human errors; earnest money custody varies (title/escrow vs. broker trust) requiring explicit handling.",
+      "business_impact": "Lost days to correct paperwork; if brokerage holds funds, added compliance burden on trust accounting."
+    },
+    {
+      "stage": "Contract-to-close coordination",
+      "owner_roles": [
+        "Transaction Coordinator",
+        "Buyer/Listing Agent"
+      ],
+      "current_process": "Track 100\u2013200+ tasks from inspections to appraisal to loan conditions, HOA and title docs. Use automated dates and reminders; maintain communication between parties.",
+      "common_tools": [
+        "Paperless Pipeline (checklists, automated dates/reminders)",
+        "SkySlope/Dotloop tasking and alerts"
+      ],
+      "manual_steps": [
+        "Order/schedule inspections; track appraisal; chase HOA, title commitments",
+        "Monitor contingency deadlines; request extensions via addenda"
+      ],
+      "pain_points": [
+        "High task volume (up to ~198 tasks) and dependencies across external parties",
+        "Spreadsheet or email-based tracking breaks at scale without a centralized system"
+      ],
+      "why_painful": "Even with software, milestones depend on third parties; TCs must proactively prevent deadline misses and compile status.",
+      "business_impact": "Missed deadlines risk deal fallout or penalties; TC workload spikes during peak months; greater variance in cycle time."
+    },
+    {
+      "stage": "Compliance review and audit readiness",
+      "owner_roles": [
+        "Managing Broker/Compliance",
+        "TC/Reviewers"
+      ],
+      "current_process": "Brokerage reviewers audit files against custom checklists; use quick-audit tools, commenting, and MLS-synced data fields; maintain an audit trail and reporting.",
+      "common_tools": [
+        "SkySlope (custom checklists, Quick Audit, MLS-synced fields, buyer agreement tracking, linked accounting via Books)",
+        "Dotloop (automated workflows, mobile review, activity logs)"
+      ],
+      "manual_steps": [
+        "Exception review of unusual docs; request corrections; final sign-off",
+        "Confirm association/MLS rule compliance beyond \u2018required fields\u2019"
+      ],
+      "pain_points": [
+        "Non-standard transactions require bespoke document sets",
+        "Multiple systems (forms/e-sign vs. storage) can create gaps without integrations"
+      ],
+      "why_painful": "Automation accelerates \u2018standard\u2019 reviews; exceptions still need licensed reviewer judgment; document gaps occur if agents export/import PDFs between siloed apps.",
+      "business_impact": "Non-compliance risks fines or legal exposure; reviewer capacity becomes a throughput bottleneck if rework volume is high."
+    },
+    {
+      "stage": "Commission calculation and CDA issuance",
+      "owner_roles": [
+        "Finance/Controller",
+        "TC",
+        "Managing Broker"
+      ],
+      "current_process": "Calculate splits, caps, fees, referrals, and deductions; generate CDA with net payables; send CDA to title/escrow with payment instructions; prep for ACH/check payouts.",
+      "common_tools": [
+        "Brokermint/BoldTrail Back Office (commission plans, agent billing, ACH, QBO integration)",
+        "Loft47 or Paperless Pipeline (CDA creation guidance/templates)",
+        "QuickBooks Online (ledger, bills, 1099 support); API Nation syncs deductions/bills"
+      ],
+      "manual_steps": [
+        "Set exceptions (special split, bonuses, clawbacks)",
+        "Verify payee legal names/EINs and payment instructions in CDA"
+      ],
+      "pain_points": [
+        "Manual CDA creation and complex split math create error risk",
+        "Referral/franchise/transaction fees alignment with payees is tedious"
+      ],
+      "why_painful": "Pre- and post-split deductions, referral lines, and fee tags need correct mapping; mistakes cause mispayments and reconciliation hassle.",
+      "business_impact": "Payment errors anger agents (attrition risk) and increase rework; delayed CDAs delay funding; manual adjustments consume finance time."
+    },
+    {
+      "stage": "Closing, payouts, and post-close accounting",
+      "owner_roles": [
+        "Title/Escrow Officer",
+        "Finance/Controller",
+        "Managing Broker"
+      ],
+      "current_process": "Title/escrow disburses according to CDA; brokerage records deposits/fees; pays agents via ACH/check; if brokerage held earnest money, performs trust accounting and reconciliations.",
+      "common_tools": [
+        "Brokermint (agent billing/statements, next-day ACH, QBO sync)",
+        "QBO (bills, expenses, deposits mapping via API Nation)",
+        "State trust account procedures if broker is custodian (e.g., CA DRE RE 13 guide)"
+      ],
+      "manual_steps": [
+        "Reconcile title disbursement vs CDA; resolve short-pays/overpays",
+        "Perform trust account reconciliations (if applicable)"
+      ],
+      "pain_points": [
+        "Disbursement variances (post-closing prorations, last-minute fee changes) require manual ledger fixes",
+        "Trust accounting has strict rules and audit exposure; errors are costly"
+      ],
+      "why_painful": "Even with synced accounting, exceptions and vendor differences demand human reconciliation; trust funds require three-way reconciliations and recordkeeping.",
+      "business_impact": "Month-end close delays; audit findings/fines for trust account mishandling; agent dissatisfaction if payouts are delayed."
+    },
+    {
+      "stage": "Post-close archiving, reporting, and year-end 1099s",
+      "owner_roles": [
+        "Compliance",
+        "Finance/Controller"
+      ],
+      "current_process": "Finalize file audit; archive in system; run brokerage/agent performance and pipeline reports; issue 1099-NEC to independent contractors at year-end.",
+      "common_tools": [
+        "Dotloop/SkySlope (centralized transaction data, reporting, integrations to accounting)",
+        "QBO or back office for 1099 preparation"
+      ],
+      "manual_steps": [
+        "Collect W-9s/update payee records; handle name/TIN mismatches",
+        "Close compliance exceptions and confirm retention policies"
+      ],
+      "pain_points": [
+        "1099 prep dependent on accurate year-long mappings of payees and splits",
+        "Data silos cause manual exports/imports to assemble reports"
+      ],
+      "why_painful": "Payers must file 1099-NEC for nonemployee compensation; mismatches and missing W-9s stall filings.",
+      "business_impact": "IRS penalties for late/inaccurate 1099s; added Q1 workload; incomplete archives increase audit risk."
+    },
+    {
+      "stage": "Agent recruiting and onboarding",
+      "owner_roles": [
+        "Broker/Owner",
+        "Recruiting/HR",
+        "Operations Manager"
+      ],
+      "current_process": "Digitally onboard agents with customized packets and checklists; collect W-9, license, ICA, E&O; provision access to CRM/MLS/transaction systems; schedule training.",
+      "common_tools": [
+        "Dotloop HR/Onboarding Dashboard (customized automation, forms, checklists)",
+        "Broker-provided onboarding checklists (W-9, license verification, ICA, E&O)"
+      ],
+      "manual_steps": [
+        "Verify licensing/association status; set commission plan in back office",
+        "Coordinate tool access and initial training calendar"
+      ],
+      "pain_points": [
+        "Paper-chasing documents across email slows ramp",
+        "Incorrect commission plan setup causes first-deal payout issues"
+      ],
+      "why_painful": "Multiple systems must be provisioned and mapped to the agent profile; errors surface only at first closing if not caught.",
+      "business_impact": "Slower agent productivity ramp; reputational damage if first checks are wrong; avoidable support tickets consume ops time."
+    }
+  ],
+  "confidence_notes": {
+    "high_confidence": [
+      "Showing management and feedback are handled inside the MLS via ShowingTime integrations (Matrix \u201cSchedule a Showing\u201d button; mobile app; feedback follow-ups) based on OneKey MLS and ShowingTime product docs.",
+      "Lead routing rules in Follow Up Boss use tags, price, zip, MLS number, and default rules; action plans are tied to routing, per FUB Help Center.",
+      "Zillow Premier Agent delivers live phone/tour/nurtured connections to agents and creates a My Agent relationship after connection, per Zillow\u2019s PA page.",
+      "Dotloop for brokers centralizes forms/e-sign/compliance, mobile review, templates, and 75+ integrations (including accounting and creating 1099s), and warns that separate systems create data gaps when agents export/import PDFs.",
+      "DocuSign Rooms for Real Estate centralizes compliance, form libraries, and e-sign, and integrates with zipForm.",
+      "Offer management by email/text is error-prone; ShowingTime Offer Manager centralizes intake, compares offers side-by-side, and logs audit trails, per The Real Deal article and ShowingTime OM pages.",
+      "Bright MLS Add/Edit requires completion of required fields and supports listing documents uploads (PDFs), per Bright MLS support resources.",
+      "Paperless Pipeline\u2019s TC guide documents up to ~198 tasks from listing to close and recommends automated checklists/dates for scale.",
+      "CDA is a broker/TC-prepared instruction to title/escrow on how to disburse commissions; created before closing to speed payouts, per Loft47 and Paperless Pipeline.",
+      "Back office platforms (Brokermint/BoldTrail) calculate splits/fees, automate agent billing, and sync with QuickBooks Online; API Nation details pre-/post-split deduction mapping to QBO.",
+      "If brokerage holds earnest money, it must use a regulated trust account and follow state rules (e.g., CA DRE\u2019s Trust Funds RE 13 guide).",
+      "Cloud CMA is used to generate MLS-fed CMAs and branded presentations with brokerage admin tooling for consistency."
+    ],
+    "inferred_but_not_confirmed": [
+      "Agent headcount bands (50\u2013200) and annual transaction volumes for $5M\u2013$50M revenue brokerages vary by market; sizes provided as typical but unverified for a specific firm.",
+      "Use of ShowingTime Offer Manager is not universal; many firms still rely on email/text for offers depending on MLS adoption and agent preference.",
+      "Presence of ISAs or lead ponds differs by brokerage culture; some route directly to agents without ISA triage."
+    ],
+    "needs_interviews": [
+      "Confirm the exact stack (Dotloop vs SkySlope vs Lone Wolf Transactions) and depth of accounting integration in place (QBO syncs, ACH rails).",
+      "Clarify whether the brokerage or title/escrow typically holds earnest money in their markets and the trust accounting process if broker-custodied.",
+      "Quantify cycle-time bottlenecks (days from \u2018under contract\u2019 to \u2018CDA issued\u2019) and rework rates (files returned per 100 submissions) to prioritize fixes.",
+      "Assess adoption of centralized offer management vs. email and the impact on lost/missed offers in multiple-offer scenarios."
+    ]
+  }
+}

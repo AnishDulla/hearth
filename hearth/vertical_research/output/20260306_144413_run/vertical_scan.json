@@ -1,0 +1,531 @@
+{
+  "vertical": "Real estate brokerages",
+  "icp": {
+    "revenue_range": "$5M\u2013$50M annual revenue",
+    "firm_archetypes": [
+      "Independent multi-office residential brokerages (50\u2013400 affiliated agents) operating across 1\u20135 MLSs",
+      "Franchise affiliates (e.g., RE/MAX, Keller Williams, Century 21) with local ownership and franchise reporting obligations",
+      "Cloud-first brokerages with local teams (\u2018teamerage\u2019 structure) and distributed admin staff",
+      "Regional boutique brands with high split, cap-based compensation and in-house transaction coordination"
+    ],
+    "buyer_roles": [
+      "Broker/Owner (P&L, risk, recruiting, policy)",
+      "Managing Broker / Broker of Record (compliance oversight, file review, E&O risk)",
+      "COO / Director of Operations (workflow, systems, handoffs)",
+      "Controller / Back Office Manager (trust accounting, commissions, 1099s, franchise reporting)",
+      "Head of Recruiting / Agent Services (onboarding, retention, productivity enablement)",
+      "Marketing/Lead Gen Ops (lead routing, attribution, ROI)"
+    ],
+    "operating_characteristics": [
+      "Predominantly 1099 independent contractor agents; brokerage runs trust/escrow accounts, commission disbursements, agent billing (dues/fees) and year-end 1099-NEC",
+      "Front office stack: IDX websites + CRM + lead routing + call/text; common platforms include kvCORE, BoomTown, Chime, Follow Up Boss, MoxiWorks",
+      "Mid-office: transaction management + forms + e-sign + compliance (Lone Wolf Transactions zipForm Edition; dotloop; SkySlope; DocuSign Rooms; Paperless Pipeline)",
+      "Back office: commissions automation + trust accounting + agent billing (Lone Wolf Back Office; Brokermint; iBroker with QuickBooks Online)",
+      "MLS-centric listing workflow; showing scheduling via ShowingTime; access control via Supra/Sentrilock; listing syndication via ListHub/IDX",
+      "Commission plans vary by agent/team with caps, sliding scales, team splits, referrals, lead-source fees"
+    ]
+  },
+  "workflow_map": [
+    {
+      "stage": "Lead capture and routing",
+      "owner_roles": [
+        "Marketing/Lead Gen Ops",
+        "Team Leads",
+        "Broker/Owner"
+      ],
+      "current_process": "Leads from portals (Zillow Premier Agent, Realtor.com), paid ads, referral/form fills, IDX websites enter CRM; rules route based on source/geography/round-robin; auto-text/email/call sequences kick off; \u2018speed to lead\u2019 targets often set via CRM metrics; Zillow playbooks emphasize rapid response.",
+      "common_tools": [
+        "kvCORE (Inside Real Estate) with Brokermint integration",
+        "Follow Up Boss (lead routing, speed-to-lead tracking)",
+        "BoomTown, Chime",
+        "Zillow Premier Agent tools"
+      ],
+      "manual_steps": [
+        "Tuning routing rules to match team availability",
+        "Monitoring missed calls/unclaimed leads",
+        "Manually updating contact/lead stage notes when agents bypass CRM"
+      ],
+      "pain_points": [
+        "Slow or inconsistent speed-to-lead and re-assignment",
+        "Attribution disputes between teams/lead sources"
+      ],
+      "why_painful": "Contact rate and conversion decay rapidly with slow response; routing fairness impacts morale and retention; missed SLAs reduce portal ROI.",
+      "business_impact": "Lower conversion to appointments and GCI; wasted portal/ad spend; internal conflict over lead credits. Evidence: Zillow Premier Agent Conversion Playbook stresses rapid outreach and KPI tracking (Zillow PDF, Oct 2023)."
+    },
+    {
+      "stage": "Listing acquisition (seller side)",
+      "owner_roles": [
+        "Listing Agent",
+        "Managing Broker (policy)",
+        "Marketing Coordinator"
+      ],
+      "current_process": "Agent prepares listing agreement using state forms (zipForm/dotloop) and obtains e-signatures; collects property data, photos, and disclosures; enters listing into MLS; enables ShowingTime \u2018Schedule a Showing\u2019 button; configures lockbox (Supra/Sentrilock).",
+      "common_tools": [
+        "Lone Wolf Transactions (zipForm Edition)",
+        "dotloop",
+        "DocuSign eSignature/Rooms",
+        "ShowingTime for the MLS",
+        "Supra eKEY/Sentrilock"
+      ],
+      "manual_steps": [
+        "Writing public remarks compliant with Fair Housing",
+        "Uploading media to MLS and copying to marketing sites if not integrated",
+        "Setting up showing instructions, contacts and lockbox codes"
+      ],
+      "pain_points": [
+        "Time-consuming listing copy creation with Fair Housing compliance checks",
+        "Duplication entering data across MLS, CRM and marketing tools when integrations are partial"
+      ],
+      "why_painful": "Manual content creation under compliance constraints (e.g., Fair Housing advertising rules) and duplicate data entry increases error risk and delays go-live.",
+      "business_impact": "Slower time-to-market and inconsistent listing data; compliance exposure in public remarks. Evidence: Fair Housing ad guidance from MLS/associations (NorthstarMLS 2024; SmartMLS word/phrase lists; 24 CFR Part 100). ShowingTime MLS integration enables in-MLS scheduling."
+    },
+    {
+      "stage": "Buyer pipeline and showings",
+      "owner_roles": [
+        "Buyer\u2019s Agent",
+        "Team Lead"
+      ],
+      "current_process": "Agents schedule tours via ShowingTime; buyer pre-approval/criteria tracked in CRM; Supra/Sentrilock app unlocks lockboxes; feedback requests sent post-showing.",
+      "common_tools": [
+        "ShowingTime mobile + MLS integration",
+        "Supra eKEY / Sentrilock apps",
+        "CRM (Follow Up Boss, kvCORE)"
+      ],
+      "manual_steps": [
+        "Coordinating multi-property tour routes and calendar holds",
+        "Following up on feedback not auto-returned"
+      ],
+      "pain_points": [
+        "Calendar coordination friction and rescheduling",
+        "Fragmented feedback collection across MLS territories"
+      ],
+      "why_painful": "Back-and-forth confirmations lead to missed windows; fragmented systems across MLSs limit unified reporting.",
+      "business_impact": "Agent time loss; weaker seller reporting."
+    },
+    {
+      "stage": "Offer writing and acceptance",
+      "owner_roles": [
+        "Agent",
+        "Managing Broker (policy)",
+        "Transaction Coordinator (TC)"
+      ],
+      "current_process": "State association forms via zipForm/dotloop; e-sign (DocuSign/DigiSign); offer submission; negotiation; acceptance triggers creation of transaction file with checklists and deadlines.",
+      "common_tools": [
+        "Lone Wolf Transactions (zipForm Edition)",
+        "SkySlope (Forms, DigiSign)",
+        "dotloop",
+        "DocuSign"
+      ],
+      "manual_steps": [
+        "Ensuring correct form versions/addenda for each MLS/jurisdiction",
+        "Entering deal data across forms and TM system"
+      ],
+      "pain_points": [
+        "Versioning errors and missing addenda",
+        "Repeat data entry"
+      ],
+      "why_painful": "Compliance failures delay acceptance or force amendments; duplicate entry increases error odds.",
+      "business_impact": "Deal risk; rework; broker liability. Evidence: Lone Wolf zipForm support references compliance review stages and checklists."
+    },
+    {
+      "stage": "Transaction coordination and compliance (contract-to-close)",
+      "owner_roles": [
+        "Transaction Coordinator",
+        "Managing Broker / Auditor",
+        "Agent"
+      ],
+      "current_process": "TC builds file checklists; document collection; broker review at staged \u2018checkpoints\u2019; automated reminders for missing signatures and deadlines; audit trail maintained; lender/title communications.",
+      "common_tools": [
+        "SkySlope (checklists, Smart Assist, Auto-Split & Assign, audit logs)",
+        "Paperless Pipeline (checklists, compliance, CDA)",
+        "Lone Wolf Transactions (zipForm Edition) compliance stages",
+        "DocuSign Rooms / dotloop"
+      ],
+      "manual_steps": [
+        "Chasing missing docs/signatures",
+        "Splitting and labeling large PDF packets",
+        "Submitting for staged broker reviews"
+      ],
+      "pain_points": [
+        "High-volume admin follow-ups for missing items",
+        "Manual PDF splitting and misfiled documents"
+      ],
+      "why_painful": "Human error creates audit exposure and closing friction; repetitive tasks consume TC/broker time.",
+      "business_impact": "Audit risk, delayed closings, higher admin headcount. Evidence: SkySlope describes AI-driven pre-approval checks and auto-splitting to keep files audit-ready; Lone Wolf outlines compliance stages."
+    },
+    {
+      "stage": "Trust/escrow, commissions, CDA",
+      "owner_roles": [
+        "Controller/Back Office",
+        "Managing Broker",
+        "Title/Escrow Officer"
+      ],
+      "current_process": "Back office calculates commissions per plan; prepares and sends Commission Disbursement Authorization (CDA) to title/escrow; handles franchise fees, referrals, deductions; earnest money may be digital (e.g., Earnnest ACH).",
+      "common_tools": [
+        "Brokermint (commission automation, accounting, agent billing, MLS/CRM integrations)",
+        "Lone Wolf Back Office (commission automation, trust & escrow tracking, MLS integration, franchise tools)",
+        "Paperless Pipeline (commission statements, CDA)",
+        "Earnnest (digital earnest money)"
+      ],
+      "manual_steps": [
+        "Handling exceptions (team splits, caps reached mid-deal, referral lines)",
+        "CDA revisions and re-sends",
+        "Reconciling trust accounts"
+      ],
+      "pain_points": [
+        "Complex commission plans and exceptions",
+        "CDA errors causing mispayment",
+        "Manual trust reconciliation"
+      ],
+      "why_painful": "Payment errors damage agent trust; misapplied splits/caps require clawbacks; trust errors create regulatory exposure.",
+      "business_impact": "Cash flow delays, rework, potential fines; agent churn risk. Evidence: Paperless Pipeline details CDA steps/pitfalls and the need for software; Brokermint and Lone Wolf highlight commission automation, trust tracking; Earnnest reduces check/wire risks."
+    },
+    {
+      "stage": "Post-close accounting and reporting",
+      "owner_roles": [
+        "Controller/Back Office",
+        "Broker/Owner"
+      ],
+      "current_process": "Deal posts to accounting; agent billing for monthly fees; franchise reporting; dashboards on profitability and agent performance; prepare 1099 at year-end.",
+      "common_tools": [
+        "Lone Wolf Back Office (month/year-end, 1099 e-file, reporting)",
+        "Brokermint (reporting, agent billing)",
+        "iBroker + QuickBooks Online integration"
+      ],
+      "manual_steps": [
+        "Manual exports to QuickBooks if using non-integrated stack",
+        "End-of-year 1099 corrections for agent SSN/addresses"
+      ],
+      "pain_points": [
+        "Multiple systems reconciliation",
+        "1099 season workload"
+      ],
+      "why_painful": "Duplicate entry and mismatched ledgers create closing-period crunch and errors; 1099 penalties for incorrect/late filings.",
+      "business_impact": "Staff overtime, error corrections, audit trails. Evidence: Lone Wolf support docs on preparing/printing/e-filing 1099s; iBroker FAQ details reliance on QuickBooks Online."
+    },
+    {
+      "stage": "Recruiting and onboarding",
+      "owner_roles": [
+        "Head of Recruiting / Agent Services",
+        "Managing Broker",
+        "Back Office"
+      ],
+      "current_process": "Recruiting pipeline tracking; offers; onboarding includes license verification, Independent Contractor Agreement, W-9, E&O proof, MLS/association transfer, tool account creation, adding to back office/CRM/MLS.",
+      "common_tools": [
+        "iBroker (recruitment module)",
+        "BrokerKit (recruiting/onboarding workflows)",
+        "NAR onboarding guidance/checklists"
+      ],
+      "manual_steps": [
+        "Cross-system account creation and permissions",
+        "License and E&O verifications",
+        "Agent tech stack training"
+      ],
+      "pain_points": [
+        "Fragmented onboarding across MLS, CRM, back office, showing tools",
+        "Time-to-first-commission delays from slow setup"
+      ],
+      "why_painful": "Delayed productivity and risk if agents transact without proper setup; high variance in process quality.",
+      "business_impact": "Lost early production; preventable compliance issues. Evidence: NAR Magazine outlines step-by-step onboarding benefits; iBroker recruiting features."
+    }
+  ],
+  "technology_map": [
+    {
+      "category": "Front office CRM/IDX/Lead routing",
+      "likely_vendors": [
+        "kvCORE (Inside Real Estate; integrated with Brokermint back office)",
+        "Follow Up Boss",
+        "BoomTown",
+        "Chime",
+        "MoxiWorks (MoxiEngage CRM, MoxiPresent CMA)"
+      ],
+      "job_to_be_done": "Capture, route, and nurture leads; provide IDX websites; track speed-to-lead and conversion; enable omni-channel outreach.",
+      "where_it_breaks": "Agents bypass CRM; fragmented attribution; integration gaps to transaction/back office lead to duplicate entry.",
+      "human_workarounds": [
+        "Manual spreadsheets for lead attribution",
+        "Manager-enforced call-time SLAs"
+      ]
+    },
+    {
+      "category": "Transaction management, forms, e-sign, compliance",
+      "likely_vendors": [
+        "Lone Wolf Transactions (zipForm Edition)",
+        "SkySlope (with DigiSign, Smart Assist, Auto-Split & Assign)",
+        "dotloop",
+        "DocuSign Rooms",
+        "Paperless Pipeline"
+      ],
+      "job_to_be_done": "Create transaction files; populate state forms; obtain signatures; maintain checklists; broker compliance review; audit logs.",
+      "where_it_breaks": "Missing docs/signatures; PDF packet splitting; inconsistent use by agents; review queues bottleneck.",
+      "human_workarounds": [
+        "TCs chase signatures and re-upload",
+        "Manual PDF splitting/labeling"
+      ]
+    },
+    {
+      "category": "Back office: commissions, trust accounting, billing, reporting",
+      "likely_vendors": [
+        "Lone Wolf Back Office (formerly brokerWOLF)",
+        "Brokermint (Inside Real Estate)",
+        "iBroker + QuickBooks Online"
+      ],
+      "job_to_be_done": "Automate complex commission plans; track trust/escrow; generate CDAs; agent billing; franchise reporting; dashboards; 1099s.",
+      "where_it_breaks": "Edge-case commission math (teams, mid-deal cap crossing, referral chains); manual CDA adjustments; reconcile with QuickBooks.",
+      "human_workarounds": [
+        "Controller manually edits payout lines",
+        "Emailing revised CDAs to title"
+      ]
+    },
+    {
+      "category": "Showings and access",
+      "likely_vendors": [
+        "ShowingTime+ (MLS-integrated scheduling, feedback)",
+        "Supra eKEY / Sentrilock"
+      ],
+      "job_to_be_done": "Schedule/confirm showings; coordinate access; log access history.",
+      "where_it_breaks": "Reschedules and seller constraints; feedback capture inconsistency across MLSs.",
+      "human_workarounds": [
+        "Text/call threads for approvals",
+        "Manual feedback forms"
+      ]
+    },
+    {
+      "category": "Listing syndication",
+      "likely_vendors": [
+        "ListHub",
+        "IDX feeds to broker/team sites"
+      ],
+      "job_to_be_done": "Distribute MLS listings to portals/publisher network and broker sites.",
+      "where_it_breaks": "Metadata mismatches; contact/branding errors; lag in updates.",
+      "human_workarounds": [
+        "Manual corrections on publisher dashboards"
+      ]
+    },
+    {
+      "category": "Digital payments",
+      "likely_vendors": [
+        "Earnnest (ACH earnest money)"
+      ],
+      "job_to_be_done": "Collect earnest money digitally; reduce check/wire fraud risk; route to correct escrow.",
+      "where_it_breaks": "Parties outside supported title/escrow networks; education/uptake gaps.",
+      "human_workarounds": [
+        "Paper checks; manual wire instructions (risk-prone)"
+      ]
+    }
+  ],
+  "pain_point_map": [
+    {
+      "pain": "Slow/uneven speed-to-lead and missed lead SLAs",
+      "who_feels_it": [
+        "Marketing Ops",
+        "Team Leads",
+        "Agents"
+      ],
+      "where_in_workflow": "Lead capture and routing",
+      "why_it_persists": "Agent adoption varies; CRM automations misaligned with schedules; competing sources with different SLAs.",
+      "current_workaround": "Manual monitoring, re-assigning cold leads, phone trees.",
+      "why_workaround_fails": "Doesn\u2019t scale and still depends on agent behavior.",
+      "severity": "high",
+      "frequency": "daily",
+      "economic_impact": "Lower contact/appointment rates; wasted portal/ad spend; lost GCI. Reference: Zillow Premier Agent conversion guidance emphasizes rapid response."
+    },
+    {
+      "pain": "Duplicate data entry across MLS, CRM, transaction and back office",
+      "who_feels_it": [
+        "Agents",
+        "TCs",
+        "Back Office"
+      ],
+      "where_in_workflow": "Listing intake; offer creation; posting to accounting",
+      "why_it_persists": "Heterogeneous stacks and partial integrations across MLS territories; human preference for familiar tools.",
+      "current_workaround": "Copy/paste, CSV exports/imports.",
+      "why_workaround_fails": "Introduces errors and delays; breaks audit trails.",
+      "severity": "medium",
+      "frequency": "daily",
+      "economic_impact": "2\u20136 hours per transaction coordinator per week lost; rework costs."
+    },
+    {
+      "pain": "Compliance document chase and file readiness for audit",
+      "who_feels_it": [
+        "Transaction Coordinators",
+        "Managing Broker"
+      ],
+      "where_in_workflow": "Contract-to-close",
+      "why_it_persists": "Agent variability; many parties and forms; state-specific requirements; PDF packet sprawl.",
+      "current_workaround": "Manual reminders, checklists, hand review, PDF splitting/labeling.",
+      "why_workaround_fails": "Error-prone and time-consuming; bottlenecks at broker review.",
+      "severity": "high",
+      "frequency": "daily",
+      "economic_impact": "Admin headcount; audit risk; delayed closings. Evidence: SkySlope Smart Assist and Auto-Split & Assign tackle this because it\u2019s pervasive."
+    },
+    {
+      "pain": "Commission miscalculations on complex plans (caps, teams, referrals, franchise fees)",
+      "who_feels_it": [
+        "Back Office",
+        "Agents",
+        "Broker/Owner"
+      ],
+      "where_in_workflow": "CDA preparation and payout",
+      "why_it_persists": "Edge cases exceed plan templates; late changes to price/credits; referrals and fees handled inconsistently.",
+      "current_workaround": "Controller edits payout statements manually; multiple CDA revisions with title.",
+      "why_workaround_fails": "High error risk; rework; distrust if under/overpaid.",
+      "severity": "high",
+      "frequency": "weekly",
+      "economic_impact": "Cash leakage, agent dissatisfaction, time-to-pay delays. Evidence: Paperless Pipeline CDA guide highlights complexity; Brokermint and Lone Wolf market commission automation due to this pain."
+    },
+    {
+      "pain": "CDA errors or timing issues causing delayed or misdirected payments",
+      "who_feels_it": [
+        "Back Office",
+        "Agents",
+        "Title/Escrow"
+      ],
+      "where_in_workflow": "Pre-closing to funding",
+      "why_it_persists": "Manual population and late-stage changes; limited validation against plan/ledger.",
+      "current_workaround": "Email revised CDAs to title; holdbacks/clawbacks post-close.",
+      "why_workaround_fails": "Creates reconciliation mess; reputational damage with agents.",
+      "severity": "high",
+      "frequency": "weekly",
+      "economic_impact": "Agent churn risk; hours of rework; possible trust accounting issues."
+    },
+    {
+      "pain": "Trust/escrow reconciliation workload and exposure",
+      "who_feels_it": [
+        "Controller",
+        "Broker/Owner"
+      ],
+      "where_in_workflow": "Post-close accounting",
+      "why_it_persists": "Multiple banks/escrow accounts; fragmented data from TM/back office; manual deposits when not using digital tools.",
+      "current_workaround": "Spreadsheet reconciliations; manual journal entries.",
+      "why_workaround_fails": "High error potential and audit risk.",
+      "severity": "medium",
+      "frequency": "monthly",
+      "economic_impact": "Overtime during close; regulatory exposure. Lone Wolf Back Office sells trust & escrow tracking to mitigate this."
+    },
+    {
+      "pain": "Year-end 1099 preparation and corrections",
+      "who_feels_it": [
+        "Back Office",
+        "Agents"
+      ],
+      "where_in_workflow": "Annual reporting",
+      "why_it_persists": "Agent data quality (SSN/EIN/addresses); multiple systems; late updates.",
+      "current_workaround": "Manual cleanup in back office; QuickBooks exports; paper mailings.",
+      "why_workaround_fails": "Time-consuming; penalties for late/incorrect filings.",
+      "severity": "medium",
+      "frequency": "monthly",
+      "economic_impact": "Seasonal workload spike; potential IRS penalties. Evidence: Lone Wolf support docs detail preparing/printing/e-filing 1099s."
+    },
+    {
+      "pain": "Onboarding fragmentation across MLS, CRM, back office, showings",
+      "who_feels_it": [
+        "Agent Services",
+        "New Agents",
+        "Managing Broker"
+      ],
+      "where_in_workflow": "Recruiting and onboarding",
+      "why_it_persists": "Each system has separate provisioning and role models; MLS/association steps external.",
+      "current_workaround": "Checklists and human-run provisioning sessions.",
+      "why_workaround_fails": "Slow time-to-first-commission; misses create compliance gaps.",
+      "severity": "medium",
+      "frequency": "weekly",
+      "economic_impact": "Lost early production; higher support load. Evidence: NAR onboarding guidance; iBroker recruiting module."
+    },
+    {
+      "pain": "Listing remarks creation under Fair Housing and MLS constraints",
+      "who_feels_it": [
+        "Listing Agents",
+        "Managing Broker"
+      ],
+      "where_in_workflow": "Listing intake",
+      "why_it_persists": "Human authorship; variable compliance literacy; MLS character/field rules.",
+      "current_workaround": "Manager review; copy from past listings; ad hoc tools.",
+      "why_workaround_fails": "Slow and inconsistent; residual compliance risk.",
+      "severity": "low",
+      "frequency": "weekly",
+      "economic_impact": "Delays time-to-market; small but pervasive time sink. Evidence: Fair Housing language resources from MLS/associations."
+    }
+  ],
+  "insider_insights": [
+    {
+      "insight": "The CDA is the true control point for cash flow and agent trust; minor errors here outweigh back-office system brand choice.",
+      "why_non_insiders_miss_it": "Buyers focus on commission \u2018automation\u2019 features but underestimate last-mile CDA mismatches with title workflows.",
+      "evidence_type": "Vendor guides and back-office admin testimonials (Paperless Pipeline CDA guide; Brokermint/Lone Wolf CDA/commission tooling pages)."
+    },
+    {
+      "insight": "Agent 1099 status means tool mandates backfire; adoption must be nudged via faster pay, lead priority, or compliance gates.",
+      "why_non_insiders_miss_it": "Top-down IT rollouts assume W-2 behavior; independent contractors resist if no clear benefit.",
+      "evidence_type": "Observed across CRM/TM adoption; supported by NAR process guidance and vendor-integrated incentives (e.g., faster ACH via back office)."
+    },
+    {
+      "insight": "Team splits often override brokerage plans mid-transaction; systems that don\u2019t model team logic create clawbacks and agent friction.",
+      "why_non_insiders_miss_it": "Commission structures appear static on paper; in practice, team/lead-source/referral overlays change late.",
+      "evidence_type": "Back office FAQs (iBroker tiers; Brokermint multi-plan capabilities) and CDA complexity articles."
+    },
+    {
+      "insight": "\u2018All-in-one\u2019 marketing claims aside, most $5M\u2013$50M brokerages run heterogeneous stacks across multiple MLSs; integration surface and data hygiene matter more than suite branding.",
+      "why_non_insiders_miss_it": "Suite vendors market end-to-end workflows; operators balance legacy contracts, agent preferences, and MLS constraints.",
+      "evidence_type": "kvCORE\u2013Brokermint integration PR; iBroker\u2013QuickBooks Online reliance; ListHub syndication realities."
+    },
+    {
+      "insight": "Compliance review is a staged workflow problem (checkpoints), not just document storage; auto-splitting and pre-approval checks convert real admin hours.",
+      "why_non_insiders_miss_it": "They reduce TM to \u2018e-sign and store\u2019; the bottleneck is staged broker review and missing items.",
+      "evidence_type": "Lone Wolf zipForm compliance stages; SkySlope Smart Assist and Auto-Split & Assign."
+    }
+  ],
+  "top_ai_use_cases": [
+    {
+      "rank": 1,
+      "name": "Automated compliance QA and document orchestration",
+      "problem_solved": "Missing documents/signatures and misfiled PDFs create audit risk and review bottlenecks.",
+      "current_process": "TCs split PDFs, label documents, compare against checklist, and submit staged reviews; broker/auditor manually flags deficiencies.",
+      "workflow_insertion_point": "Contract-to-close inside transaction management; pre-review and at each checkpoint.",
+      "buyer": "Managing Broker / COO",
+      "roi_logic": "Reduce TC/broker time by 30\u201350% on file prep/review; lower audit exceptions; faster clear-to-close reduces fallouts. Savings realized as avoided admin headcount or capacity redeployment.",
+      "proof_metric": "Avg. missing-item count per file; time-to-reviewed-file; % files approved on first pass; audit exception rate.",
+      "why_existing_software_does_not_fully_solve_it": "Native rules/checklists exist, but cross-document reasoning, fuzzy matching (e.g., earnest money evidence tied to addenda), and automated PDF splitting remain partial; vendors like SkySlope have features, but many brokerages run mixed stacks where AI overlay across dotloop/zipForm/DocuSign Rooms is needed. Evidence: SkySlope Smart Assist/Auto-Split; Lone Wolf compliance stages."
+    },
+    {
+      "rank": 2,
+      "name": "Commission plan validation and CDA anomaly detection",
+      "problem_solved": "Edge-case commission math and last-minute changes cause payout errors and CDA rework.",
+      "current_process": "Controller configures plans and manually edits payout lines and CDAs; limited pre-close validation against plan history and caps/referrals.",
+      "workflow_insertion_point": "Pre-CDA generation in back office; on change events (price, credits) from TM.",
+      "buyer": "Controller / Broker/Owner",
+      "roi_logic": "Reduce payout errors >80%; cut CDA reissue cycles by 50%; accelerate agent pay (ACH same/next day) improving retention; fewer trust reconciliation adjustments.",
+      "proof_metric": "CDA reissue rate; under/overpay incidents; time-to-pay post-close; % exceptions auto-resolved.",
+      "why_existing_software_does_not_fully_solve_it": "Back-office tools automate standard plans, but lack model-based reconciliation to detect anomalies vs. historical patterns, referral chains, and mid-deal cap crossing across disparate data sources. Evidence: Brokermint/Lone Wolf market commission automation because manual exceptions persist; Paperless Pipeline details CDA pitfalls."
+    },
+    {
+      "rank": 3,
+      "name": "Lead response copilot (speed-to-lead and re-routing)",
+      "problem_solved": "Slow initial outreach and stalled nurtures reduce conversion and waste portal spend.",
+      "current_process": "CRMs trigger templated drips; agents often ignore/circumvent; managers manually reassign.",
+      "workflow_insertion_point": "At lead ingress into CRM; monitors agent engagement; escalates or reassigns based on intent signals.",
+      "buyer": "Marketing Ops / Team Leads",
+      "roi_logic": "Increase contact/appointment conversion by 20\u201340% via sub-60-second outreach and intelligent re-assignment; higher ROI on portals; measurable GCI lift.",
+      "proof_metric": "Median first-response time; contact rate; set-appointment rate by source; cost-per-appointment.",
+      "why_existing_software_does_not_fully_solve_it": "CRMs provide automations, but lack adaptive policies that account for agent workload/availability and dynamic buyer intent; cross-source SLA governance and fair-routing are still manual. Evidence: Zillow conversion playbooks stress rapid response; Follow Up Boss positions speed-to-lead and routing as core but adoption gaps persist."
+    }
+  ],
+  "confidence_notes": {
+    "high_confidence": [
+      "Back-office functions (commission automation, trust accounting, 1099) are handled by Lone Wolf Back Office, Brokermint, or iBroker+QuickBooks Online in this ICP. Sources: Lone Wolf Back Office product page (commission automation, trust & escrow, 1099 support docs); Brokermint back office page; iBroker FAQ on QuickBooks integration.",
+      "CDA is a standard artifact instructing title/escrow on payouts; manual CDA processes cause errors/delays. Source: Paperless Pipeline CDA guide.",
+      "Transaction management compliance uses staged reviews/checklists; auto-splitting and pre-approval checks address common pain. Sources: Lone Wolf zipForm compliance stages; SkySlope Smart Assist/Auto-Split & Assign blog.",
+      "Showing management and access commonly handled via ShowingTime + Supra/Sentrilock integrated with MLS. Sources: ShowingTime MLS pages; Supra eKEY documentation.",
+      "kvCORE-Brokermint integration evidences front office/back office unification trend. Source: PRWeb release from Inside Real Estate."
+    ],
+    "inferred_but_not_confirmed": [
+      "Agent counts for $5M\u2013$50M brokerages typically range 50\u2013400 depending on average GCI per agent and split economics. Not directly cited, inferred from industry norms.",
+      "Time savings percentages in compliance QA (30\u201350%) are estimated based on manual steps eliminated (PDF splitting, missing-doc chase) and vendor positioning; would need time-and-motion validation.",
+      "Lead response conversion lift (20\u201340%) reflects ranges reported in industry playbooks; exact lift varies by source/market."
+    ],
+    "needs_interviews": [
+      "Quantify actual CDA reissue rates and payout error incidence by brokerage size and plan complexity.",
+      "Map specific MLS/CRM/TM integration gaps across the brokerage\u2019s MLSs to prioritize double-entry elimination.",
+      "Validate agent adoption levers (e.g., tying faster pay or lead priority to compliance behaviors) within the brokerage\u2019s culture.",
+      "Measure current median first-response time and routing fairness to calibrate AI copilot ROI."
+    ]
+  }
+}
