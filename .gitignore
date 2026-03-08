@@ -1,0 +1,12 @@
+# OS
+.DS_Store
+
+# Python cache artifacts
+__pycache__/
+*.pyc
+
+# Local secrets
+hearth/.env
+
+# Generated run outputs
+hearth/vertical_research/output/
