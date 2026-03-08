@@ -80,7 +80,10 @@ vertical-research run "PI law firms"
 
 ## Output Locations
 
-- Timestamped outputs: `vertical_research/output/<timestamp>_<command>/`
+- Timestamped outputs:
+  - vertical commands: `vertical_research/output/<vertical>_<YYYYMMDD>/`
+  - repeated same-day runs append numeric suffix: `<vertical>_<YYYYMMDD>_2`
+  - `ask` command: `vertical_research/output/ask_<YYYYMMDD>/`
   - `<command>.json`
   - `<command>.md`
 - Durable memory journal: `vertical_research/reports/research_journal.md`

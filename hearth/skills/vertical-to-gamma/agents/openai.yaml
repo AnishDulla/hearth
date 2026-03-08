@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vertical to Gamma"
+  short_description: "Turn vertical research into 3-slide Gamma decks"
+  default_prompt: "Use $vertical-to-gamma to convert my latest vertical research output into a concise 3-slide Gamma infographic and create it via Gamma API."

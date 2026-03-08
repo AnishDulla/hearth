@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -8,10 +9,26 @@ from typing import Any
 from pydantic import BaseModel
 
 
-def new_report_dir(base_dir: Path, command: str) -> Path:
-    stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    report_dir = base_dir / f"{stamp}_{command}"
-    report_dir.mkdir(parents=True, exist_ok=True)
+def _slugify(value: str) -> str:
+    slug = re.sub(r"[^a-z0-9]+", "_", value.lower()).strip("_")
+    return slug or "report"
+
+
+def new_report_dir(base_dir: Path, command: str, vertical: str | None = None) -> Path:
+    stamp = datetime.now().strftime("%Y%m%d")
+    prefix = _slugify(vertical) if vertical else _slugify(command)
+    report_dir = base_dir / f"{prefix}_{stamp}"
+
+    if report_dir.exists():
+        idx = 2
+        while True:
+            candidate = base_dir / f"{prefix}_{stamp}_{idx}"
+            if not candidate.exists():
+                report_dir = candidate
+                break
+            idx += 1
+
+    report_dir.mkdir(parents=True, exist_ok=False)
     return report_dir
 
 

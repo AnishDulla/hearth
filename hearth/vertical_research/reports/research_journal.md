@@ -121,3 +121,42 @@
 - Share of carriers per agency supporting claims download; noted as inconsistent but varies by carrier mix.
 - Average FTE count and policy count bands for $5M–$50M agencies; typical ranges inferred from operating patterns.
 
+## 2026-03-07 10:01:04 | home services | $5M-$50M annual revenue
+
+### Durable Findings
+- Lead capture and call booking
+- Online booking and confirmations
+- Dispatch and capacity planning
+- Onsite diagnosis and sales presentation
+- Job execution and documentation
+
+### Strongest Pain Signals
+- Missed/abandoned inbound calls, especially at peaks and after-hours
+- Low-quality marketplace leads (shared/double-sold, poor contactability)
+- Scheduling gaps from cancellations/no-shows
+- Inefficient routing and skill mismatches increase drive time and re-dispatch
+- Out-of-date pricebook and supplier costs causing margin leakage
+
+### Strongest Tech Stack Findings
+- Field Service Management (FSM)/CRM: ServiceTitan, Housecall Pro, Jobber
+- Telephony/call tracking/contact center: ServiceTitan Phones Pro/Contact Center Pro, CallRail, RingCentral
+- Online booking and reminders: ServiceTitan Scheduling Pro (Schedule Engine), Reserve with Google (via ServiceTitan), Housecall Pro/Jobber online booking
+- Payments and consumer financing: ServiceTitan Payments (Tap to Pay), Jobber Payments, Housecall Pro Payments
+- Procurement, inventory, AP automation: ServiceTitan Purchasing & Inventory + Ferguson integration (real-time pricing/availability, in-app POs), QuickBooks, ServiceTitan AP Automation (AI bill-to-PO/job match)
+
+### Candidate AI Use Cases
+- #1 AI call answering + booking assistant (24/7), integrated to FSM
+- #2 AI dispatch and dynamic capacity optimizer
+- #3 AI pricebook + margin guard (auto-cost sync, pricing suggestions, quote risk alerts)
+
+### Open Questions
+- Quantify actual no-show and cancellation rates by sub-trade and season for target firms.
+- Measure field documentation time and callback rates before/after structured prompts/AI transcriptions.
+- Validate realized AP automation time savings and error reduction with Controller/AP teams in this ICP.
+- Pricebook governance cadence and the degree of existing supplier integrations in the target installed base.
+
+### Contradictions / Uncertain Claims
+- Exact missed-call rates for a given $5–$50M shop vary; we used 10–20% range based on CallRail home services (14%) vs SMB overall (30%).
+- Revenue/tech lift from dispatch optimization estimated from industry routing improvements (10–20% drive-time reduction) rather than a single benchmark tied to this ICP.
+- Gross margin leakage of 2–4 pts from outdated pricebooks is based on operator anecdotes and supplier price volatility; precise point estimates vary by trade and season.
+

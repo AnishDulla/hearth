@@ -57,7 +57,7 @@ def run(
     orchestrator = _new_orchestrator(settings=settings)
 
     outcome = orchestrator.run_full(vertical=vertical, icp=icp, model=model)
-    report_dir = new_report_dir(settings.output_dir, command="run")
+    report_dir = new_report_dir(settings.output_dir, command="run", vertical=vertical)
 
     for module_result in outcome.module_results:
         show_module_result(module_result.name, module_result.tool_calls)
@@ -99,7 +99,7 @@ def _run_single(
     orchestrator = _new_orchestrator(settings=settings)
     result = runner(orchestrator, vertical, icp, model)
 
-    report_dir = new_report_dir(settings.output_dir, command=command)
+    report_dir = new_report_dir(settings.output_dir, command=command, vertical=vertical)
     json_path, md_path = save_model_outputs(
         report_dir,
         command,
